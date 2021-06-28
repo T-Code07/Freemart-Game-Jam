@@ -282,10 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6de8d5229d9f44996a9e286909139e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerSpeed: 10
+  m_playerSpeed: 5
+  m_jumpHeight: 3
   m_sprintBoost: 1.5
   m_crouchSpeedReduce: 0.5
-  m_jumpHeight: 5
+  m_crouchHeight: 0.5
+  m_crouchStepHeight: 0.2
+  m_defaultStepHeight: 0.5
   m_gravity: -9.8
   m_groundCheck: {fileID: 681336733}
   m_groundDistance: 0.4

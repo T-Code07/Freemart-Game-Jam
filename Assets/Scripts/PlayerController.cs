@@ -10,18 +10,22 @@ namespace Freemart.Player.Control
     {
         private CharacterController m_controller;
 
-        [Header("Speed:")]
+        [Header("General:")]
         [SerializeField] float m_playerSpeed = 10f;
+        [SerializeField] float m_jumpHeight = 5f;
         [SerializeField] float m_sprintBoost = 1.5f;
-        [SerializeField] float m_crouchSpeedReduce = 0.5f;
-        [SerializeField] float m_crouchHeight = 0.5f;
-        [SerializeField] float m_crouchStepHeight = 0.2f;
-        //todo: finish the defualt step height and implament
 
         [Space(5)]
 
-        [Header("Jumping/Physics:")]
-        [SerializeField] float m_jumpHeight = 5f;
+        [Header("Crouch:")]
+        [SerializeField] float m_crouchSpeedReduce = 0.5f;
+        [SerializeField] float m_crouchHeight = 0.5f;
+        [SerializeField] float m_crouchStepHeight = 0.2f;
+        [SerializeField] float m_defaultStepHeight = 0.5f;
+
+        [Space(5)]
+
+        [Header("Physics:")]
         [SerializeField] float m_gravity = -9.8f;
         [SerializeField] Transform m_groundCheck;
         [SerializeField] float m_groundDistance = 0.4f;
@@ -78,11 +82,13 @@ namespace Freemart.Player.Control
                 m_isCrouching = true;
                 speed = m_crouchSpeedReduce * m_playerSpeed;
                 transform.localScale = new Vector3 (1, m_crouchHeight, 1) ;
+                m_controller.stepOffset = m_crouchStepHeight;
             }
             else 
             {
                 m_isCrouching = false;
                 transform.localScale = new Vector3(1, 1, 1);
+                m_controller.stepOffset = m_defaultStepHeight;
             }
             m_controller.Move(move * speed * Time.deltaTime);
 
