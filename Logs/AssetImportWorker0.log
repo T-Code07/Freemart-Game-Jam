@@ -1022,3 +1022,109 @@ System memory in use after: 65.2 MB.
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1945.
 Total: 2.673200 ms (FindLiveObjects: 0.267100 ms CreateObjectMapping: 0.163300 ms MarkObjects: 2.216300 ms  DeleteObjects: 0.024300 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006279 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.933 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1382 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.1 MB.
+System memory in use after: 65.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1948.
+Total: 2.303600 ms (FindLiveObjects: 0.265400 ms CreateObjectMapping: 0.064100 ms MarkObjects: 1.947900 ms  DeleteObjects: 0.024000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 14990.462093 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eea242b944dafa412a7366044c5b55f7') in 0.017918 seconds
+  Import took 0.021980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017524 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eea242b944dafa412a7366044c5b55f7') in 0.010984 seconds
+  Import took 0.013737 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004918 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.972 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1382 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.1 MB.
+System memory in use after: 65.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1951.
+Total: 4.168000 ms (FindLiveObjects: 0.318900 ms CreateObjectMapping: 0.078000 ms MarkObjects: 3.739500 ms  DeleteObjects: 0.029400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.315838 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84513f7be8603f8fd7706317b4b0d6fd') in 0.007266 seconds
+  Import took 0.010570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.040343 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84513f7be8603f8fd7706317b4b0d6fd') in 0.004408 seconds
+  Import took 0.007319 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005524 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.195 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1382 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.1 MB.
+System memory in use after: 65.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1954.
+Total: 2.026600 ms (FindLiveObjects: 0.246300 ms CreateObjectMapping: 0.041500 ms MarkObjects: 1.713500 ms  DeleteObjects: 0.023100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.508070 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(dd6de8d5229d9f44996a9e286909139e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6e43ad2a503fa89d6948bb503312a57') in 0.007875 seconds
+  Import took 0.010686 seconds .
+
