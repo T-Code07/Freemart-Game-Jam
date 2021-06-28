@@ -283,7 +283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerSpeed: 10
-  m_sprintBoost: 0.5
+  m_sprintBoost: 1.5
+  m_crouchSpeedReduce: 0.5
   m_jumpHeight: 5
   m_gravity: -9.8
   m_groundCheck: {fileID: 681336733}
