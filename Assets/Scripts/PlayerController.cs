@@ -5,7 +5,6 @@ using UnityEngine;
 //Code inspired by Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController m_controller;
     
     [Header("Speed:")]
     [SerializeField] float m_playerSpeed = 10f;
@@ -13,15 +12,20 @@ public class PlayerController : MonoBehaviour
 
     [Space(5)]
 
-    [Header("Jumping/Physics:")]
     [SerializeField] float m_jumpHeight = 5f;
+
+    [Space(5)]
+
+    [Header("Physics:")]
     [SerializeField] float m_gravity = -9.8f;
     [SerializeField] Transform m_groundCheck;
     [SerializeField] float m_groundDistance = 0.4f;
     [SerializeField] LayerMask m_groundMask;
-    private bool m_isGrounded;
-    
-    Vector3 m_velocity;
+
+    private CharacterController m_controller;
+    private bool m_isGrounded;    
+    private Vector3 m_velocity;
+
     private void Start()
     {
         m_controller = GetComponent<CharacterController>();
