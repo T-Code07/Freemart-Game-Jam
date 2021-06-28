@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Freemart.Player.Control
-{
     //Code inspired by Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
     public class PlayerController : MonoBehaviour
     {
@@ -97,4 +95,4 @@ namespace Freemart.Player.Control
             m_controller.Move(m_velocity * Time.deltaTime);
         }
     }
-}
+
