@@ -13,6 +13,7 @@ public class Mouse_Look : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+
     void Update()
     {
         //Code from Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
@@ -22,6 +23,7 @@ public class Mouse_Look : MonoBehaviour
 
          m_xRotation -= Mouse_Input_Y;
         m_xRotation = Mathf.Clamp(m_xRotation, -90f, 90f);
+
 
         transform.localRotation = Quaternion.Euler(m_xRotation, 0, 0);
         m_playerTransform.Rotate(Vector3.up * Mouse_Input_X);
