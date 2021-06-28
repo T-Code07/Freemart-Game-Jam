@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Code from Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
+//Code inspired by Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
 public class PlayerController : MonoBehaviour
 {
     private CharacterController m_controller;
+    
+    [Header("Speed:")]
     [SerializeField] float m_playerSpeed = 10f;
-    [SerializeField] float m_gravity = -9.8f;
+    [SerializeField] float m_sprintBoost = 0.5f;
+
+    [Space(5)]
+
+    [Header("Jumping/Physics:")]
     [SerializeField] float m_jumpHeight = 5f;
+    [SerializeField] float m_gravity = -9.8f;
+    
     Vector3 m_velocity;
     private void Start()
     {
@@ -31,8 +39,18 @@ public class PlayerController : MonoBehaviour
         {
             m_velocity.y = Mathf.Sqrt(m_jumpHeight * -2 * m_gravity);
         }
+
         //change in y = 1/2g * t^2 (Physics)
-        m_controller.Move(move * m_playerSpeed * Time.deltaTime);
+        float speed = m_playerSpeed;
+        if (Input.GetButton("Sprint")) 
+        {
+            //add playerSpeed to the sprin boost percentage of the playerSpeed:
+            //speed = (playerSpeed * speed %) + playerSpeed
+            speed = (m_playerSpeed * m_sprintBoost) + m_playerSpeed;
+        }
+        print(speed);
+        print(move * speed * Time.deltaTime);
+        m_controller.Move(move * speed * Time.deltaTime);
 
         //Multiply by time.deltatime twice to forfill the t^2
         m_velocity.y += m_gravity * Time.deltaTime;
