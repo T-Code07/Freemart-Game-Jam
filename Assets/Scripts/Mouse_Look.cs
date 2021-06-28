@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Mouse_Look : MonoBehaviour
 {
-    float m_MouseSensitivity = 100f;
+    [SerializeField] float m_MouseSensitivity = 100f;
     float m_xRotation = 0f;
     [SerializeField] Transform m_playerTransform;
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
