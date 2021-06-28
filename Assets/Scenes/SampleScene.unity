@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playerSpeed: 10
+  m_sprintBoost: 0.5
   m_gravity: -9.8
   m_jumpHeight: 5
 --- !u!143 &486248045
