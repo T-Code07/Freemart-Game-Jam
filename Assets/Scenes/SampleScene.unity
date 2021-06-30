@@ -1056,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9848078
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1064,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.17364816
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1076,7 +1076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1103,6 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_targetYRotation: 80
+  m_targetYRotation2: 40
   m_speed: 1
   m_cameraView: {fileID: 1953225513}
   m_scanRadius: 0.63
