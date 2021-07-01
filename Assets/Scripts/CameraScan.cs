@@ -12,11 +12,10 @@ public class CameraScan : MonoBehaviour
     [SerializeField] LayerMask m_playerMask;
     [SerializeField] float m_startAngle = 0f;
 
-    private float m_movedSoFar;
     private bool m_movedToFirstRotation = false;
     private Vector3 m_cameraViewScale;
     private float m_scanArea;
-
+    private float m_honingDistance = 1.5f;
     private void Start()
     {
         //make the scan are the product of the scale of the z axis and the boost.
@@ -38,75 +37,70 @@ public class CameraScan : MonoBehaviour
             print("Detecting player");
         }
 
+        if (RotateToPosition(m_FirstTargetYRotation)) 
+        {
+            print("successfully rotates to position");
+            if (RotateToPosition(m_SecondTargetYRotation)) 
+            {
+                print("successfully rotates to 2ND POSITION");
+                return;
+            }
+        }
+    //    RotateToPosition(m_FirstTargetYRotation);
         //If haven't reach first rotation
         //Check to see if roatate to positon -- this works bc rotate to 
         //--position only returns true if it has made it. 
         //--Everytime you call it, it moves and checks again
-        if (m_movedToFirstRotation == false)
-        {
-            if (RotateToPosition(m_FirstTargetYRotation))
-            {
-                //Rotated to postion
-                //Therefore:
-                m_movedToFirstRotation = true;
-            }
-            print("Moved to 1st p");
-        }
+    /*      if (m_movedToFirstRotation == false)
+           {
+            print("trying to rotate to first posiont");
+               if (RotateToPosition(m_FirstTargetYRotation))
+               {
+                print("Fully rotated to first positon");
+                   //Rotated to postion
+                   //Therefore:
+                   m_movedToFirstRotation = true;
+               }
+               print("Moved to 1st p");
+           }
 
-        //Repeat same logic from above here
-        //Except, check to see if moved to first rotation is true.
-        //then set it back to false the second target rotation has been reached. 
-        if (m_movedToFirstRotation == true)
-        {
+           //Repeat same logic from above here
+           //Except, check to see if moved to first rotation is true.
+           //then set it back to false the second target rotation has been reached. 
+           if (m_movedToFirstRotation == true)
+           {
+            print("trying to rotate to 2ND posiont");
+
             if (RotateToPosition(m_SecondTargetYRotation))
-            {
-                print("moved to 2nd p");
-                m_movedToFirstRotation = false;
-            }
+               {
+                   print("moved to 2nd p");
+                   m_movedToFirstRotation = false;
+               }
 
-        }   
+           }   */
     }
 
     private bool RotateToPosition(float target)
     {
-        //Check to see whether the target is positive or negative.
-        //This will be used to check whether the current Y rotation is close to 
-        //the target Y rotation.
-        bool isTargetPositive = target > 0;
-        bool isTargetNegative = target < 0;
-
+        print("Vector 3 distance: " + Vector3.Distance(transform.rotation.eulerAngles, new Vector3(0, target, 0)));
 
         //Find the difference between the original Y rotation before moving and the target 
+
+
         float differenceOfYRotation = target - m_startAngle;
+        print("Difference of Y: " + differenceOfYRotation);
 
-        //If the distance moved so far is greater than the difference between the target value and the start angle
-        //AND the value is positive
-        //stop moving (return)
-
-        //Check if it is positive bc when moving from a positive number to a negative number, the
-        //target value is smaller than the difference. Becuase of this bug, it will stop the movement. 
-        //todo: make moving between larger and smaller numbers when the number is still positive or negative work
-        //EX: from -80 to -40, from 80 to 40
-        if (m_movedSoFar > differenceOfYRotation && isTargetPositive)
+        if (Vector3.Distance(transform.rotation.eulerAngles, new Vector3(0, target, 0)) < m_honingDistance)
         {
-            print("TOOOOOOOOOOOOOOOOOOOo FAR");
+            print("reached rotation");
             return true;
         }
-        else if (m_movedSoFar < differenceOfYRotation && isTargetNegative)
-        {
-            print("Too far negative");
-            return true;
-        }
-
-        //Predict the step of rotation by using the same equation used for the actual movement
-        Vector3 predictedRotation = new Vector3(0, differenceOfYRotation, 0) * Time.deltaTime * m_speed;
-
-        //Add the predicted step to the movement so far
-        m_movedSoFar += predictedRotation.y;
 
         //Actually move.
         transform.Rotate(new Vector3(0, differenceOfYRotation, 0) * Time.deltaTime * m_speed);
         return false;
+            
+            
     }
 
     //Show the area of the camera scanning for the player in the Camera View object
