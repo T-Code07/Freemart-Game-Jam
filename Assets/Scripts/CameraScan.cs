@@ -37,21 +37,25 @@ public class CameraScan : MonoBehaviour
             print("Detecting player");
         }
 
-        if (RotateToPosition(m_FirstTargetYRotation)) 
+        /*if (RotateToPosition(m_FirstTargetYRotation)) 
         {
             print("successfully rotates to position");
+            
             if (RotateToPosition(m_SecondTargetYRotation)) 
             {
                 print("successfully rotates to 2ND POSITION");
                 return;
             }
-        }
-    //    RotateToPosition(m_FirstTargetYRotation);
+        }*/
+
+        //TODO: MAKE IT ROTATE BETWEEN ROTATION 1 AND ROTATION 2!!!!!!!!!!!!!!!!!
+
+        //    RotateToPosition(m_FirstTargetYRotation);
         //If haven't reach first rotation
         //Check to see if roatate to positon -- this works bc rotate to 
         //--position only returns true if it has made it. 
         //--Everytime you call it, it moves and checks again
-    /*      if (m_movedToFirstRotation == false)
+        /*  if (m_movedToFirstRotation == false)
            {
             print("trying to rotate to first posiont");
                if (RotateToPosition(m_FirstTargetYRotation))
@@ -63,11 +67,22 @@ public class CameraScan : MonoBehaviour
                }
                print("Moved to 1st p");
            }
+           else if(m_movedToFirstRotation) 
+           {
+            print("tring to rotate to 2ND POSITION");
+               if (RotateToPosition(m_SecondTargetYRotation))
+               {
+                   print("moved to 2nd p");
+                   m_movedToFirstRotation = false;
+               }
+           }*/
+        RotateToPosition(m_SecondTargetYRotation);
+        print("moved to position: " + m_movedToFirstRotation);
 
            //Repeat same logic from above here
            //Except, check to see if moved to first rotation is true.
            //then set it back to false the second target rotation has been reached. 
-           if (m_movedToFirstRotation == true)
+        /*   if (m_movedToFirstRotation == true)
            {
             print("trying to rotate to 2ND posiont");
 
@@ -80,17 +95,18 @@ public class CameraScan : MonoBehaviour
            }   */
     }
 
+    //Helpful source: https://answers.unity.com/questions/770255/rotate-object-to-a-specific-angle-and-then-stop.html
     private bool RotateToPosition(float target)
     {
         print("Vector 3 distance: " + Vector3.Distance(transform.rotation.eulerAngles, new Vector3(0, target, 0)));
+        float distance = Vector3.Distance(transform.rotation.eulerAngles, new Vector3(0, target, 0));
 
         //Find the difference between the original Y rotation before moving and the target 
-
-
         float differenceOfYRotation = target - m_startAngle;
-        print("Difference of Y: " + differenceOfYRotation);
+        bool isDistancePositive = distance > 0;
+       print("Difference of Y: " + differenceOfYRotation);
 
-        if (Vector3.Distance(transform.rotation.eulerAngles, new Vector3(0, target, 0)) < m_honingDistance)
+        if (distance < m_honingDistance)
         {
             print("reached rotation");
             return true;

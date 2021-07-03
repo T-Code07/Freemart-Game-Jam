@@ -1223,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4299718164309530585, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_SecondTargetYRotation
-      value: 60
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 4992553686998724660, guid: 780f3071f634f4243976e5fd1ad24cd2, type: 3}
       propertyPath: m_RootOrder
