@@ -8,28 +8,17 @@ public class CameraScan : MonoBehaviour
     [SerializeField] float m_SecondTargetYRotation = 40f;
     [SerializeField] float m_speed = 1f;
     [SerializeField] GameObject m_cameraView;
-    [SerializeField] float m_scanScaleBoost = 1f;
+    [SerializeField] float m_scanRadius = 1f;
     [SerializeField] LayerMask m_playerMask;
     [SerializeField] float m_startAngle = 0f;
 
     private bool m_movedToFirstRotation = false;
-    private Vector3 m_cameraViewScale;
-    private float m_scanArea;
-    private float m_honingDistance = 1.5f;
-    private void Start()
-    {
-        //make the scan are the product of the scale of the z axis and the boost.
-        //The z and x axis make the object circular.
-        //Because of the Circle_Keeper script, the x will always match the z.
-        m_cameraViewScale = m_cameraView.transform.localScale;
-        m_scanArea = (m_scanScaleBoost * m_cameraViewScale.z);
-    }
 
     void Update()
     {
         //Check sorrounding area over the Camera view gameobject. Ignores every collider expect for the ones in the m_playerMask layer.
         //Return whether there is something there.
-        bool hitPlayer = Physics.CheckSphere(m_cameraView.transform.position, m_scanArea, m_playerMask);
+        bool hitPlayer = Physics.CheckSphere(m_cameraView.transform.position, m_scanRadius, m_playerMask);
 
 
         if (hitPlayer)
@@ -122,6 +111,6 @@ public class CameraScan : MonoBehaviour
     //Show the area of the camera scanning for the player in the Camera View object
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(m_cameraView.transform.position, m_scanScaleBoost * m_cameraView.transform.localScale.z);
+        Gizmos.DrawWireSphere(m_cameraView.transform.position, m_scanRadius);
     }
 }
