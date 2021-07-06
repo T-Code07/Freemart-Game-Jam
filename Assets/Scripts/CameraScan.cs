@@ -10,7 +10,6 @@ public class CameraScan : MonoBehaviour
     [SerializeField] GameObject m_cameraView;
     [SerializeField] float m_scanRadius = 1f;
     [SerializeField] LayerMask m_playerMask;
-    [SerializeField] float m_startAngle = 0f;
 
     private float m_movedSoFar;
     private bool m_movedToFirstRotation = false;
@@ -56,6 +55,11 @@ public class CameraScan : MonoBehaviour
         }   
     }
 
+    /// <summary>
+    /// This rotates the target's amount of degrees from the camera's rotation. 
+    /// </summary>
+    /// <param name="target">Change in degrees from set rotation</param>
+    /// <returns>Returns whether, after movement, the target is</returns>
     private bool RotateToPosition(float target)
     {
         //Check to see whether the target is positive or negative.
@@ -66,7 +70,7 @@ public class CameraScan : MonoBehaviour
 
 
         //Find the difference between the original Y rotation before moving and the target 
-        float differenceOfYRotation = target - m_startAngle;
+        float differenceOfYRotation = target;
 
         //If the distance moved so far is greater than the difference between the target value and the start angle
         //AND the value is positive
@@ -74,7 +78,8 @@ public class CameraScan : MonoBehaviour
 
         //Check if it is positive bc when moving from a positive number to a negative number, the
         //target value is smaller than the difference. Becuase of this bug, it will stop the movement. 
-        //todo: make moving between larger and smaller numbers when the number is still positive or negative work
+
+        //(If still of time) todo: make moving between larger and smaller numbers when the number is still positive or negative work
         //EX: from -80 to -40, from 80 to 40
         if (m_movedSoFar > differenceOfYRotation && isTargetPositive)
         {
