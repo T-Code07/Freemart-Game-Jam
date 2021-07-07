@@ -33,6 +33,13 @@ namespace Freemart.Player.Control
         private bool m_isGrounded;
         private Vector3 m_velocity;
         private bool m_isCrouching;
+        private bool m_isMovementFrozen = false;
+
+        public bool isMovementFrozen 
+        {
+            get { return m_isMovementFrozen; }
+            set { m_isMovementFrozen = value; }
+        }
         private void Start()
         {
             m_controller = GetComponent<CharacterController>();
@@ -59,44 +66,53 @@ namespace Freemart.Player.Control
             //this makes x and z to the local area of movement relative to the player body. 
             Vector3 move = transform.right * x + transform.forward * z;
 
-            //v needed to reach h (height):
-            //v = sqrt(-2hg) (Physics)
-            if (Input.GetButtonDown("Jump") && m_isGrounded && !m_isCrouching)
-            {
-                m_velocity.y = Mathf.Sqrt(m_jumpHeight * -2 * m_gravity);
-            }
-
             //change in y = 1/2g * t^2 (Physics)
             float speed = m_playerSpeed;
-            if (Input.GetButton("Sprint") && !m_isCrouching)
+
+            //if movement is not frozen (This would be done by the Game Manager.)
+            if (!m_isMovementFrozen)
             {
-                //add playerSpeed to the sprin boost percentage of the playerSpeed:
-                //speed = (playerSpeed * speed %) 
-                speed = (m_playerSpeed * m_sprintBoost);
+                //v needed to reach h (height):
+                //v = sqrt(-2hg) (Physics)
+                if (Input.GetButtonDown("Jump") && m_isGrounded && !m_isCrouching)
+                {
+                    m_velocity.y = Mathf.Sqrt(m_jumpHeight * -2 * m_gravity);
+                }
+
+
+                if (Input.GetButton("Sprint") && !m_isCrouching)
+                {
+                    //add playerSpeed to the sprin boost percentage of the playerSpeed:
+                    //speed = (playerSpeed * speed %) 
+                    speed = (m_playerSpeed * m_sprintBoost);
+                }
+
+                //Crouching reduces the speed and the height of the player
+                if (Input.GetButton("Crouch"))
+                {
+                    m_isCrouching = true;
+                    speed = m_crouchSpeedReduce * m_playerSpeed;
+                    transform.localScale = new Vector3(1, m_crouchHeight, 1);
+                    m_controller.height = m_crouchHeight;
+                    m_controller.stepOffset = m_crouchStepHeight;
+                }
+                else
+                {
+                    m_isCrouching = false;
+                    transform.localScale = new Vector3(1, 1, 1);
+                    m_controller.stepOffset = m_defaultStepHeight;
+                    m_controller.height = 2;
+                }
+                m_controller.Move(move * speed * Time.deltaTime);
+
             }
 
-            //Crouching reduces the speed and the height of the player
-            if (Input.GetButton("Crouch"))
-            {
-                m_isCrouching = true;
-                speed = m_crouchSpeedReduce * m_playerSpeed;
-                transform.localScale = new Vector3(1, m_crouchHeight, 1);
-                m_controller.height = m_crouchHeight;
-                m_controller.stepOffset = m_crouchStepHeight;
-            }
-            else
-            {
-                m_isCrouching = false;
-                transform.localScale = new Vector3(1, 1, 1);
-                m_controller.stepOffset = m_defaultStepHeight;
-                m_controller.height = 2;
-            }
-            m_controller.Move(move * speed * Time.deltaTime);
-
+            //*If no movement is done, this will just be gravity acting.*
             //Multiply by time.deltatime twice to forfill the t^2
             m_velocity.y += m_gravity * Time.deltaTime;
             m_controller.Move(m_velocity * Time.deltaTime);
         }
+  
     }
 }
 
