@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Use this script to make sure the Camera View of a camera is circular.
-/// </summary>
-[ExecuteInEditMode]
-public class Circle_Keeper : MonoBehaviour
+namespace Freemart.Obstacles.Camera
 {
-    void Update()
+    /// <summary>
+    /// Use this script to make sure the Camera View of a camera is circular.
+    /// </summary>
+    [ExecuteInEditMode]
+    public class Circle_Keeper : MonoBehaviour
     {
-        float x = transform.localScale.z;
-        transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+        void Update()
+        {
+            float x = transform.localScale.z;
+            transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+        }
     }
 }

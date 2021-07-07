@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+namespace Freemart.Player.Control
+{
     //Code inspired by Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
     public class PlayerController : MonoBehaviour
     {
@@ -75,15 +76,15 @@ using UnityEngine;
             }
 
             //Crouching reduces the speed and the height of the player
-            if (Input.GetButton("Crouch")) 
+            if (Input.GetButton("Crouch"))
             {
                 m_isCrouching = true;
                 speed = m_crouchSpeedReduce * m_playerSpeed;
-                transform.localScale = new Vector3 (1, m_crouchHeight, 1) ;
+                transform.localScale = new Vector3(1, m_crouchHeight, 1);
                 m_controller.height = m_crouchHeight;
                 m_controller.stepOffset = m_crouchStepHeight;
             }
-            else 
+            else
             {
                 m_isCrouching = false;
                 transform.localScale = new Vector3(1, 1, 1);
@@ -97,4 +98,5 @@ using UnityEngine;
             m_controller.Move(m_velocity * Time.deltaTime);
         }
     }
+}
 
