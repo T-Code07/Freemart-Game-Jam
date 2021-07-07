@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5466134998531730040}
   - component: {fileID: 5466134998531730041}
   - component: {fileID: 5466134998531730042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5466134999859523295}
   - component: {fileID: 5466134999859523288}
   - component: {fileID: 5466134999859523289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5466134999892340006}
   - component: {fileID: 5466134999892340007}
   - component: {fileID: 5466134999892340000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3198128325994396911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Duck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
