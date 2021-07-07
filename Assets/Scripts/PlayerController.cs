@@ -80,6 +80,7 @@ using UnityEngine;
                 m_isCrouching = true;
                 speed = m_crouchSpeedReduce * m_playerSpeed;
                 transform.localScale = new Vector3 (1, m_crouchHeight, 1) ;
+                m_controller.height = m_crouchHeight;
                 m_controller.stepOffset = m_crouchStepHeight;
             }
             else 
@@ -87,6 +88,7 @@ using UnityEngine;
                 m_isCrouching = false;
                 transform.localScale = new Vector3(1, 1, 1);
                 m_controller.stepOffset = m_defaultStepHeight;
+                m_controller.height = 2;
             }
             m_controller.Move(move * speed * Time.deltaTime);
 

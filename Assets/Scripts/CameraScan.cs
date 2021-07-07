@@ -38,7 +38,7 @@ public class CameraScan : MonoBehaviour
                 //Therefore:
                 m_movedToFirstRotation = true;
             }
-            print("Moved to 1st p");
+      //      print("Moved to 1st p");
         }
 
         //Repeat same logic from above here
@@ -48,7 +48,7 @@ public class CameraScan : MonoBehaviour
         {
             if (RotateToPosition(m_SecondTargetYRotation))
             {
-                print("moved to 2nd p");
+      //          print("moved to 2nd p");
                 m_movedToFirstRotation = false;
             }
 
@@ -83,12 +83,12 @@ public class CameraScan : MonoBehaviour
         //EX: from -80 to -40, from 80 to 40
         if (m_movedSoFar > differenceOfYRotation && isTargetPositive)
         {
-            print("TOOOOOOOOOOOOOOOOOOOo FAR");
+  //          print("TOOOOOOOOOOOOOOOOOOOo FAR");
             return true;
         }
         else if (m_movedSoFar < differenceOfYRotation && isTargetNegative)
         {
-            print("Too far negative");
+  //          print("Too far negative");
             return true;
         }
 
