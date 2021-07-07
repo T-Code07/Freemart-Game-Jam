@@ -10,14 +10,15 @@ namespace Freemart.Obstacles.Camera
         [SerializeField] float m_SecondTargetYRotation = 40f;
         [SerializeField] float m_speed = 1f;
         [SerializeField] GameObject m_cameraView;
-        [SerializeField] float m_scanRadius = 1f;
+        [SerializeField] float m_scanScaleBoost = .2f;
         [SerializeField] LayerMask m_playerMask;
 
         private float m_movedSoFar;
         private bool m_movedToFirstRotation = false;
-
+        private float m_scanRadius;
         void Update()
         {
+            m_scanRadius = m_cameraView.transform.localScale.z * m_scanScaleBoost;
             //Check sorrounding area over the Camera view gameobject. Ignores every collider expect for the ones in the m_playerMask layer.
             //Return whether there is something there.
             bool hitPlayer = Physics.CheckSphere(m_cameraView.transform.position, m_scanRadius, m_playerMask);
@@ -108,6 +109,8 @@ namespace Freemart.Obstacles.Camera
         //Show the area of the camera scanning for the player in the Camera View object
         private void OnDrawGizmos()
         {
+            m_scanRadius = m_cameraView.transform.localScale.z * m_scanScaleBoost;
+
             Gizmos.DrawWireSphere(m_cameraView.transform.position, m_scanRadius);
         }
     }
