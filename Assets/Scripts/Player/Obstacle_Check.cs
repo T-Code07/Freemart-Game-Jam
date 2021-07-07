@@ -12,11 +12,11 @@ namespace Freemart.Player.EnviromentSensors
         [SerializeField] LayerMask m_obstacleMesh;
         [SerializeField] float m_obstacleDamage = 1f;
         [SerializeField] float m_damageDelay = 1f;
-        private playerHealth m_healthScript;
+        private PlayerHealth m_healthScript;
         static private bool m_isDelayRunning = false;
         private void Start()
         {
-            m_healthScript = GetComponent<playerHealth>();
+            m_healthScript = GetComponent<PlayerHealth>();
         }
 
         //Runs when the character controller is moving

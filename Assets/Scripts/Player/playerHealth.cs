@@ -10,12 +10,18 @@ namespace Freemart.Player.Health
         ALIVE,
         DEAD
     }
-    public class playerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour
     {
         [SerializeField] float m_maxHealth = 10f;
         [SerializeField] TextMeshProUGUI m_healthText;
-        public PlayerState m_playerState = PlayerState.ALIVE;
 
+        private PlayerState m_playerState = PlayerState.ALIVE;
+
+        public PlayerState playerState 
+        {
+            get { return m_playerState; }
+            set { m_playerState = value; }
+        }
         //To be called in objects that do damage.
         public void DecreaseHealth(float damage)
         {
