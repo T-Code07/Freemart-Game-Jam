@@ -11,6 +11,7 @@ public class Objstacle_Check : MonoBehaviour
     {
         if(hit.gameObject.layer == LayerMask.NameToLayer("Objstacle")) 
         {
+            print("NAME OF COLLISION: " + hit.transform.name);
             print("OBJSTACLE!!!!!!");
         }
     }
