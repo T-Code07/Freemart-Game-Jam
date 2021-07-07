@@ -25,12 +25,16 @@ namespace Freemart.Managers
             if (m_isPLayerDisabled) 
             {
                 m_deathTXT.enabled = true;
+
+                //enable death cam and disable main cam
                 m_mainCamera.SetActive(false);
                 m_deathCamera.SetActive(true);
             }
             else 
             {
                 m_deathTXT.enabled = false;
+
+                //enable main cam and disable death cam
                 m_mainCamera.SetActive(true);
                 m_deathCamera.SetActive(false);
             }
