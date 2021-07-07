@@ -249,7 +249,7 @@ Transform:
   - {fileID: 3596395550842122622}
   - {fileID: 1776957727}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &486248043
 GameObject:
@@ -261,8 +261,8 @@ GameObject:
   m_Component:
   - component: {fileID: 486248046}
   - component: {fileID: 486248044}
-  - component: {fileID: 486248045}
   - component: {fileID: 486248047}
+  - component: {fileID: 486248045}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -328,7 +328,7 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 681336733}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &486248047
 MonoBehaviour:
@@ -471,6 +471,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &733850941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4254044013547207230, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_Name
+      value: Duck Or Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.093377
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.3188632
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044110927736181839, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5cf2afedc7c74cf47a08ffa1651d08b0, type: 3}
 --- !u!1 &869482450
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 97.817, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -853,7 +910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3198128325994396911, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3198128325994396911, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -895,37 +952,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5466134998531730042, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Size.z
-      value: 0.82118225
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466134998531730042, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Center.z
-      value: 0.089408875
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466134999859523289, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Size.y
-      value: 0.87121654
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466134999859523289, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Center.y
-      value: 0.0643919
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466134999892340000, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Size.z
-      value: 0.88149166
-      objectReference: {fileID: 0}
-    - target: {fileID: 5466134999892340000, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_Center.z
-      value: -0.05925417
-      objectReference: {fileID: 0}
     - target: {fileID: 8550887808056726174, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
       propertyPath: m_Name
       value: Duck
-      objectReference: {fileID: 0}
-    - target: {fileID: 8550887808056726174, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
-      propertyPath: m_TagString
-      value: Objstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b50f53fd678833844a85ffb10fb4f84b, type: 3}
@@ -1066,7 +1095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8091234452023032608, guid: df3554589c0f0034d902615c992b13f5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8091234452023032608, guid: df3554589c0f0034d902615c992b13f5, type: 3}
       propertyPath: m_LocalPosition.x

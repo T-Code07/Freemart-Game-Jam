@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 466159428186572166}
   - component: {fileID: 466159428186572167}
   - component: {fileID: 466159428186572160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466159428186572161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.11}
-  m_LocalScale: {x: 0.34927, y: 1.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.17, z: -1.11}
+  m_LocalScale: {x: 0.34927, y: 1.28634, z: 1}
   m_Children: []
   m_Father: {fileID: 7044110927736181839}
   m_RootOrder: 0
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.85987806}
+  m_Center: {x: 0, y: 0, z: -0.07006097}
 --- !u!1 &466159428222043770
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 466159428222043775}
   - component: {fileID: 466159428222043768}
   - component: {fileID: 466159428222043769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466159428222043770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.697, z: 0.047999978}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0.047999978}
   m_LocalScale: {x: 0.32051808, y: 0.32691434, z: 3.5048168}
   m_Children: []
   m_Father: {fileID: 7044110927736181839}
@@ -188,8 +188,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.24518998, z: 1}
+  m_Center: {x: 0, y: 0.37740508, z: 0}
 --- !u!1 &466159429012374235
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 466159429012374232}
   - component: {fileID: 466159429012374233}
   - component: {fileID: 466159429012374234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,8 +217,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466159429012374235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.18}
-  m_LocalScale: {x: 0.34927, y: 1.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.16999996, z: 1.18}
+  m_LocalScale: {x: 0.34927, y: 1.28634, z: 1}
   m_Children: []
   m_Father: {fileID: 7044110927736181839}
   m_RootOrder: 1
@@ -283,8 +283,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.8411126}
+  m_Center: {x: 0, y: 0, z: 0.07944369}
 --- !u!1 &4254044013547207230
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7044110927736181839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Duck Or Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
