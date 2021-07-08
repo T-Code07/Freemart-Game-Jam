@@ -18,6 +18,7 @@ namespace Freemart.Obstacles.Camera
         [SerializeField] GameObject m_cameraView;
         [SerializeField] float m_scanScaleBoost = .2f;
         [SerializeField] float m_damageDelt = 2f;
+        [SerializeField] float m_damageDelay = 0.5f;
         [SerializeField] LayerMask m_playerMask;
 
         private float m_movedSoFar;
@@ -34,7 +35,7 @@ namespace Freemart.Obstacles.Camera
             if (hitPlayer)
             {
                 PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-                playerHealth.DecreaseHealth(m_damageDelt, 0.5f);
+                playerHealth.DecreaseHealth(m_damageDelt, m_damageDelay);
             }
 
             //If haven't reach first rotation
@@ -49,7 +50,6 @@ namespace Freemart.Obstacles.Camera
                     //Therefore:
                     m_movedToFirstRotation = true;
                 }
-                //      print("Moved to 1st p");
             }
 
             //Repeat same logic from above here
