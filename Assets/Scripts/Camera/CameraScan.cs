@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Freemart.Player.Health;
 
 namespace Freemart.Obstacles.Camera
 {
     public class CameraScan : MonoBehaviour
     {
+        [Header("Movement: ")]
         [SerializeField] float m_FirstTargetYRotation = 80f;
         [SerializeField] float m_SecondTargetYRotation = 40f;
         [SerializeField] float m_speed = 1f;
+
+        [Space(5)]
+
+        [Header("Camera View: ")]
         [SerializeField] GameObject m_cameraView;
         [SerializeField] float m_scanScaleBoost = .2f;
+        [SerializeField] float m_damageDelt = 2f;
         [SerializeField] LayerMask m_playerMask;
 
         private float m_movedSoFar;
@@ -26,7 +33,8 @@ namespace Freemart.Obstacles.Camera
 
             if (hitPlayer)
             {
-                print("Detecting player");
+                PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+                playerHealth.DecreaseHealth(m_damageDelt);
             }
 
             //If haven't reach first rotation

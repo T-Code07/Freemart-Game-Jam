@@ -33,27 +33,9 @@ namespace Freemart.Player.EnviromentSensors
         {
             //Checks the layer of the hit
             if (hit.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
-            {
-                //if the co-routine is running, return
-                if (m_isDelayRunning) return;
-
-                StartCoroutine(damageDelay());
+            {           
+                m_healthScript.DecreaseHealth(m_obstacleDamage, m_damageDelay);
             }
-        }
-
-        IEnumerator damageDelay()
-        {
-            //Delay is running
-            m_isDelayRunning = true;
-
-            //Decrease health
-            m_healthScript.DecreaseHealth(m_obstacleDamage);
-
-            //Delay
-            yield return new WaitForSeconds(m_damageDelay);
-
-            //Delay stopped
-            m_isDelayRunning = false;
         }
     }
 }
