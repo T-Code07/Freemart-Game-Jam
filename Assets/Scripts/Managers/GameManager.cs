@@ -13,16 +13,16 @@ namespace Freemart.Managers
         [SerializeField] TextMeshProUGUI m_deathTXT;
         [SerializeField] GameObject m_mainCamera;
         [SerializeField] GameObject m_deathCamera;
-        private bool m_isPLayerDisabled = false;
+        private bool m_isPlayerDisabled = false;
         public bool isPlayerDisabled
         {
-            get { return m_isPLayerDisabled; }
-            set { m_isPLayerDisabled = value; }
+            get { return m_isPlayerDisabled; }
+            set { m_isPlayerDisabled = value; }
         }
 
         void Update()
         {
-            if (m_isPLayerDisabled) 
+            if (m_isPlayerDisabled) 
             {
                 m_deathTXT.enabled = true;
 

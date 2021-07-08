@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Freemart.Managers.LocationPoint;
+using TMPro;
 
 public class LocationPointManager : MonoBehaviour
 {
     [SerializeField] LocationPoint m_startLocation;
     [SerializeField] LocationPoint m_endLocation;
+    [SerializeField] TextMeshProUGUI m_courseStatusText;
+
+    [SerializeField] string m_finishedCourseText = "You Escaped!";
+    [SerializeField] string m_goHomeText = "Escape through the entrance!";
+    [SerializeField] string m_startGameText = "Please start the game...";
+    [SerializeField] string m_goToShelves = "Travel to the shelves (red location)";
 
     private bool m_playerFinishedCourse = false;
+    private string m_currentText;
 
     public bool PlayerFinishedCourse 
     {
@@ -34,12 +42,15 @@ public class LocationPointManager : MonoBehaviour
         if (m_startLocation.PlayerHasArrived && m_endLocation.PlayerHasArrived == false)
         {
             print("Game in progress...");
+            m_currentText = m_goToShelves;
            
         }
         //If the player has arrived at both the locations but the start location hasn't been reset:    
         //reset the start location for the journey back home. 
         else if(m_startLocation.PlayerHasArrived && m_endLocation.PlayerHasArrived && m_startLocation.TimesReset == 0) 
         {
+            m_currentText = m_goHomeText;
+
             //Change the hasArrived back to false and add a reset time to the start location point
             m_startLocation.ResetPoint();
         }
@@ -48,12 +59,13 @@ public class LocationPointManager : MonoBehaviour
         {
             print("Course Ended!!!!!!!!!!!!!");
             m_playerFinishedCourse = true;
-
+            m_currentText = m_finishedCourseText;
         }
         //The course hasn't been started because the player hasn't entered the start location yet
         else if(!m_startLocation.PlayerHasArrived && !m_endLocation.PlayerHasArrived) 
         {
             print("waiting for game to start...");
+            m_currentText = m_startGameText;
         }
         //If the start location hasn't been reset, but the end location has already been arrived at:
         // 1. error - this is weird. This means that the player somehow took a shortcut through the course by missing the start location
@@ -61,6 +73,16 @@ public class LocationPointManager : MonoBehaviour
         else if( m_startLocation.TimesReset == 0 && m_endLocation.PlayerHasArrived)
         {
             Debug.LogError("Player arrived at end location before start location. Please review location point settings.");
+        }
+
+        try
+        {
+            m_courseStatusText.text = m_currentText;
+        }
+        catch 
+        
+        {
+            Debug.LogError("Text never set in Location Manager");
         }
 
     }
