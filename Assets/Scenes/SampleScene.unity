@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 267350167}
   - component: {fileID: 267350166}
   m_Layer: 5
-  m_Name: DeathTXT
+  m_Name: GameStatusTXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,9 +415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36751364f9afbef488156abda82bce3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_deathTXT: {fileID: 267350166}
+  m_gameStatusText: {fileID: 267350166}
   m_mainCamera: {fileID: 963194225}
   m_deathCamera: {fileID: 869482450}
+  m_deathText: You Died
+  m_youWonText: You Got Free Stuff!
 --- !u!4 &639540327
 Transform:
   m_ObjectHideFlags: 0
