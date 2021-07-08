@@ -395,8 +395,8 @@ GameObject:
   m_Component:
   - component: {fileID: 486248046}
   - component: {fileID: 486248044}
-  - component: {fileID: 486248048}
   - component: {fileID: 486248047}
+  - component: {fileID: 486248048}
   - component: {fileID: 486248049}
   - component: {fileID: 486248045}
   m_Layer: 7
@@ -1645,5 +1645,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1454811953, guid: df3554589c0f0034d902615c992b13f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: df3554589c0f0034d902615c992b13f5, type: 3}

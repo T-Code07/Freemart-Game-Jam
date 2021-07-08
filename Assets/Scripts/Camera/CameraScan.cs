@@ -34,7 +34,7 @@ namespace Freemart.Obstacles.Camera
             if (hitPlayer)
             {
                 PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
-                playerHealth.DecreaseHealth(m_damageDelt);
+                playerHealth.DecreaseHealth(m_damageDelt, 0.5f);
             }
 
             //If haven't reach first rotation
