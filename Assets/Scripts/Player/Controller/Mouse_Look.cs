@@ -23,8 +23,8 @@ namespace Freemart.Player.Control
             //changed Time.deltaTime to Time.smoothDeltaTime. It was super bumpy and looked as if it was stepping to different grid steps.
             //However, smoothDeltaTime helped with that. Apparently, (according to https://forum.unity.com/threads/time-smoothdeltatime.10253/) it limits the flucuaction in Time.Deltatime. 
             //Technically, it is slower than Time.Deltatime, but the "hitch" is less noticable. 
-            float Mouse_Input_X = Input.GetAxis("Mouse X") * m_MouseSensitivity * Time.smoothDeltaTime;
-            float Mouse_Input_Y = Input.GetAxis("Mouse Y") * m_MouseSensitivity * Time.smoothDeltaTime;
+            float Mouse_Input_X = Input.GetAxis("Mouse X") * m_MouseSensitivity;
+            float Mouse_Input_Y = Input.GetAxis("Mouse Y") * m_MouseSensitivity;
 
             m_xRotation -= Mouse_Input_Y;
             m_xRotation = Mathf.Clamp(m_xRotation, -90f, 90f);
