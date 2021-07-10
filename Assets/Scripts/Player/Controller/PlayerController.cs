@@ -88,7 +88,7 @@ namespace Freemart.Player.Control
                 }
 
                 //Crouching reduces the speed and the height of the player
-                if (Input.GetButton("Crouch"))
+                if (Input.GetButton("Crouch") || Input.GetKey(KeyCode.Q)) 
                 {
                     m_isCrouching = true;
                     speed = m_crouchSpeedReduce * m_playerSpeed;
