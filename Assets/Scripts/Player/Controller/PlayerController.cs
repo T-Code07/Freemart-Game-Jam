@@ -59,8 +59,8 @@ namespace Freemart.Player.Control
                 m_velocity.y = -m_controller.height;
             }
             //The difference may be the direction needed to move?
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            float x = Input.GetAxis("Horizontal") * Time.deltaTime;
+            float z = Input.GetAxis("Vertical") * Time.deltaTime;
 
             //"consider move an arrow pointing to the direction we want to move"
             //this makes x and z to the local area of movement relative to the player body. 
@@ -88,7 +88,7 @@ namespace Freemart.Player.Control
                 }
 
                 //Crouching reduces the speed and the height of the player
-                if (Input.GetButton("Crouch"))
+                if (Input.GetButton("Crouch") || Input.GetKey(KeyCode.LeftAlt))
                 {
                     m_isCrouching = true;
                     speed = m_crouchSpeedReduce * m_playerSpeed;
