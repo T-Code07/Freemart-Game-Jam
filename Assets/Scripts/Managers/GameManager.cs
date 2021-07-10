@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 namespace Freemart.Managers
 {
     public enum GameStatus 
@@ -18,11 +18,12 @@ namespace Freemart.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] TextMeshProUGUI m_gameStatusText;
+        [SerializeField] GameObject m_gameStatusCanvas;
         [SerializeField] GameObject m_mainCamera;
         [SerializeField] GameObject m_deathCamera;
         [SerializeField] string m_deathText = "You Died";
         [SerializeField] string m_youWonText = "You Got Free Stuff!";
-
+        
         private bool m_isPlayerDisabled = false;
         private bool m_isCourseFinished = false;
         private GameStatus m_gameStatus = GameStatus.IN_PROGRESS;
@@ -37,6 +38,7 @@ namespace Freemart.Managers
             get { return m_isCourseFinished; }
             set { m_isCourseFinished = value; }
         }
+
 
         void Update()
         {
@@ -56,7 +58,7 @@ namespace Freemart.Managers
             //2. monitor the status of isCourseFinished
             else
             {
-                m_gameStatusText.enabled = false;
+                m_gameStatusCanvas.SetActive(false);
 
                 //enable main cam and disable death cam
                 m_mainCamera.SetActive(true);
@@ -83,11 +85,18 @@ namespace Freemart.Managers
         /// </summary>
         private void GameLost()
         {
-            m_gameStatusText.enabled = true;
+            //Unlock cursor from 1st Player mode.
+            Cursor.lockState = CursorLockMode.Confined;
+
             m_gameStatusText.text = m_deathText;
+
             //enable death cam and disable main cam
             m_mainCamera.SetActive(false);
             m_deathCamera.SetActive(true);
+
+            //Activate Game Status Canvas
+            m_gameStatusCanvas.SetActive( true);
+
             m_gameStatus = GameStatus.LOST;
         }
 
@@ -97,13 +106,29 @@ namespace Freemart.Managers
         /// </summary>
         private void GameWon() 
         {
-            m_gameStatusText.enabled = true;
+            //Unlock cursor from 1st Player mode.
+            Cursor.lockState = CursorLockMode.Confined;
+
             m_gameStatusText.text = m_youWonText;
 
             //enable death cam and disable main cam
             m_mainCamera.SetActive(false);
             m_deathCamera.SetActive(true);
+
+            //Activate Game Status Canvas
+            m_gameStatusCanvas.SetActive(true);
+
             m_gameStatus = GameStatus.WON;
         }
+
+        /// <summary>
+        /// Called when the restart button is clicked.
+        /// </summary>
+        public void RestartButton() 
+        {
+            //This loads the current active scene (so, level 1).
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 }
