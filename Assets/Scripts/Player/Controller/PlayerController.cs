@@ -13,7 +13,7 @@ namespace Freemart.Player.Control
         [SerializeField] float m_playerSpeed = 10f;
         [SerializeField] float m_jumpHeight = 5f;
         [SerializeField] float m_sprintBoost = 1.5f;
-
+        [SerializeField] float m_mouseSensitivity = 1.5f;
         [Space(5)]
 
         [Header("Crouch:")]
@@ -59,7 +59,7 @@ namespace Freemart.Player.Control
                 m_velocity.y = -m_controller.height;
             }
             //The difference may be the direction needed to move?
-            float x = Input.GetAxis("Horizontal");
+            float x = Input.GetAxis("Horizontal") * m_mouseSensitivity;
             float z = Input.GetAxis("Vertical");
 
             //"consider move an arrow pointing to the direction we want to move"
