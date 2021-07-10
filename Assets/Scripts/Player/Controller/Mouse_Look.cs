@@ -6,7 +6,7 @@ namespace Freemart.Player.Control
 {
     public class Mouse_Look : MonoBehaviour
     {
-        [SerializeField] float m_MouseSensitivity = 100f;
+        [SerializeField] float m_MouseSensitivity = 3f;
         float m_xRotation = 0f;
         [SerializeField] Transform m_playerTransform;
 
@@ -20,9 +20,8 @@ namespace Freemart.Player.Control
         {
             //Code from Unity's example code: https://www.youtube.com/watch?v=_QajrabyTJc
 
-            //changed Time.deltaTime to Time.smoothDeltaTime. It was super bumpy and looked as if it was stepping to different grid steps.
-            //However, smoothDeltaTime helped with that. Apparently, (according to https://forum.unity.com/threads/time-smoothdeltatime.10253/) it limits the flucuaction in Time.Deltatime. 
-            //Technically, it is slower than Time.Deltatime, but the "hitch" is less noticable. 
+
+            //Input.getAxis doesn't need the Time.deltaTime becuase it is independent of framerate. (Source: https://answers.unity.com/questions/459132/getaxismouse-x-suddenly-faster-in-build.html)
             float Mouse_Input_X = Input.GetAxis("Mouse X") * m_MouseSensitivity;
             float Mouse_Input_Y = Input.GetAxis("Mouse Y") * m_MouseSensitivity;
 
