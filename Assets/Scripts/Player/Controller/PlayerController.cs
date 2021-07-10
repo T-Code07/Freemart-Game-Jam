@@ -59,8 +59,8 @@ namespace Freemart.Player.Control
                 m_velocity.y = -m_controller.height;
             }
             //The difference may be the direction needed to move?
-            float x = Input.GetAxis("Horizontal") * Time.deltaTime;
-            float z = Input.GetAxis("Vertical") * Time.deltaTime;
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
             //"consider move an arrow pointing to the direction we want to move"
             //this makes x and z to the local area of movement relative to the player body. 
