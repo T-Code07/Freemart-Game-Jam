@@ -4646,6 +4646,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: In-Game UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6113115692470002544, guid: 16a9aa9325a18994083067fcbe731534, type: 3}
+      propertyPath: m_fontSize
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113115692470002544, guid: 16a9aa9325a18994083067fcbe731534, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a9aa9325a18994083067fcbe731534, type: 3}
 --- !u!1001 &8314077092074960593
@@ -4744,8 +4752,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8314077091930326596, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 318.5724
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314077091930326596, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 160.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314077091930326596, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -29
+      value: -31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314077091930326596, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314077091930326599, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
+      propertyPath: m_margin.z
+      value: -62.91342
       objectReference: {fileID: 0}
     - target: {fileID: 8314077091930326599, guid: bb5e8269cf5914e4b8c49493ec184726, type: 3}
       propertyPath: m_VerticalAlignment
